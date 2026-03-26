@@ -1,31 +1,28 @@
 export const researchData = {
-  heading: "Built on evidence, not wellness noise",
+  eyebrow: "PRE+PRO+POSTbiotic formula",
+  heading: "After years of Innovation and Rigorous Research, GutGuard SynBIOTIC+ is Finally here!",
   paragraph:
-    "Every GutGuard formula is designed around ingredients commonly studied for digestive resilience, microbiome diversity, and barrier support.",
+    "This is not just another supplement—it’s a scientific breakthrough designed to RESET your Health: The only Triple-Biotics formula for better gut health, stronger immunity, and a longer, healthier life.",
   learnMoreCta: {
-    label: "Learn more",
+    label: "Learn More",
     href: "#product",
   },
   featureCards: [
     {
-      title: "Clinically aligned formula",
-      description:
-        "We prioritize strains and compounds commonly evaluated in digestive health studies instead of trend-driven filler ingredients.",
+      title: "Pre, Pro, and Post-biotic Formula",
+      description: "GutGuard SynBIOTIC+ supports your gut microbiome",
     },
     {
-      title: "Transparent potency",
-      description:
-        "Each serving is labeled for active potency and handling standards so the formula remains practical outside of a lab setting.",
+      title: "17 strains 80 billion CFU",
+      description: "GutGuard SynBIOTIC+ supports your gut microbiome",
     },
     {
-      title: "Expert-reviewed approach",
-      description:
-        "Our ingredient stack is framed for gastroenterology clinics, functional nutrition partners, and retail advisors who need credible talking points.",
+      title: "Urolithin A + L-Tryptophan",
+      description: "GutGuard SynBIOTIC+ supports your gut microbiome",
     },
     {
-      title: "Routine-first delivery",
-      description:
-        "Capsule format, shelf stability, and daily dosing are all chosen to support adherence outside an idealized wellness routine.",
+      title: "Gut, brain, immunity support",
+      description: "GutGuard SynBIOTIC+ supports your gut microbiome",
     },
   ],
 };
