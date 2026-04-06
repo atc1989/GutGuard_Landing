@@ -1,21 +1,22 @@
 export const productHighlightData = {
-  title: "Meet GutGuard Pro",
-  description:
-    "A premium digestive support capsule that pairs broad-spectrum probiotics with prebiotic fiber and calming botanical support.",
+  title: "GutGuard SynBIOTIC+",
+  subtitle: "We 'Gut' You",
   leftBenefits: [
-    "50 billion CFUs per serving",
-    "15 targeted probiotic strains",
+    "₱3,800 / bottle for 30-day supply of science-backed gut health",
+    "Boosts immunity & Supports Digestion",
+    "Enhances energy & Mental clarity",
   ],
   rightBenefits: [
-    "Delayed-release vegetarian capsule",
-    "Simple once-daily routine",
+    "Powered by Urolithin-A, L-Tryptophan & Triple Biotics",
+    "Stem Cell Activation",
+    "80 Billion Multi-Strain Bacteria",
   ],
   bottleImage: {
     src: "/images/bottle.png",
-    alt: "GutGuard Pro bottle",
+    alt: "GutGuard SynBIOTIC+ bottle",
   },
   cta: {
-    text: "View product details",
+    text: "Buy SynBIOTIC+",
     href: "#footer-cta",
   },
 };

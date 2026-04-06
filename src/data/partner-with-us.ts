@@ -1,25 +1,25 @@
 export const partnerWithUsData = {
-  title: "Partner with GutGuard",
-  description:
-    "We support wholesale partners and collaborators with margin-friendly pricing, education assets, and launch support that makes the product easier to sell responsibly.",
+  eyebrow: "WANT TO EARN FROM GUTGUARD?",
+  title: "Partner with us!",
+  subtitle: "Become part of our growing wellness movement.",
   cards: [
     {
       title: "Stockist",
-      body: "Offer GutGuard in clinics and wellness retail environments with supporting sell-through assets.",
-      icon: "S",
-      buttonText: "Become a stockist",
+      body: "Start earning by sharing GutGuard",
+      buttonText: "Learn More",
+      accent: "#45AEEF",
     },
     {
       title: "Center",
-      body: "Build GutGuard into a care or coaching environment with practical education materials and partner support.",
-      icon: "C",
-      buttonText: "Talk to partnerships",
+      body: "Build your team and lead your area",
+      buttonText: "Join as Partner",
+      accent: "#6A67F7",
     },
     {
-      title: "Need help?",
-      body: "Get help choosing the right partnership path, launch plan, or support package for your audience.",
-      icon: "?",
-      buttonText: "Contact us",
+      title: "Need Help or Want to Talk?",
+      body: "Call or message one of our friendly GutGuard Reps. We're here to help you decide what's best for your health!",
+      buttonText: "Contact a Representative",
+      accent: "#190DD8",
     },
   ],
 };

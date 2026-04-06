@@ -41,7 +41,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-full font-medium tracking-[0.01em] shadow-sm transition duration-200 ease-[var(--ease-smooth)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 hover:-translate-y-0.5",
+    "inline-flex items-center justify-center rounded-lg font-medium tracking-[0.01em] shadow-sm transition duration-200 ease-[var(--ease-smooth)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 hover:-translate-y-0.5",
     variantClasses[variant],
     sizeClasses[size],
     className,

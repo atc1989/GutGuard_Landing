@@ -8,27 +8,24 @@ export default function PartnerLogosSection() {
   const { partners } = landingData;
 
   return (
-    <section className="pb-6 pt-2 sm:pb-10" id="partners">
+    <section className="relative pb-12 pt-6 sm:pb-16 sm:pt-8" id="partners">
       <Container size="xl">
-        <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-            {partners.eyebrow}
-          </p>
-        </Reveal>
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 rounded-[32px] border border-white/60 bg-white/65 px-6 py-5 shadow-[0_18px_48px_rgba(7,27,84,0.06)] backdrop-blur sm:gap-x-10 sm:px-8">
-          {partners.logos.map((partner, index) => (
-            <Reveal key={partner.label} delay={index * 70} variant="up">
-              <div className="flex min-w-[138px] items-center justify-center">
-                <Image
-                  alt={partner.altText}
-                  className="h-10 w-auto opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                  height={40}
-                  src={partner.imagePath}
-                  width={124}
-                />
-              </div>
-            </Reveal>
-          ))}
+        <div className="py-8 sm:py-10">
+          <div className="grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 md:gap-x-10 lg:flex lg:flex-nowrap lg:items-center lg:justify-center lg:gap-8">
+            {partners.logos.map((partner, index) => (
+              <Reveal key={partner.label} delay={index * 70} variant="up">
+                <div className={`group flex h-[118px] items-center justify-center lg:h-[138px] lg:shrink-0 ${partner.wrapperClassName ?? ""}`}>
+                  <Image
+                    alt={partner.altText}
+                    className={`${partner.className} brightness-0 invert opacity-42 saturate-0 transition duration-300 ease-out group-hover:opacity-100`}
+                    height={partner.height}
+                    src={partner.imagePath}
+                    width={partner.width}
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

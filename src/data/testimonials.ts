@@ -1,30 +1,54 @@
 export const testimonialsData = {
-  title: "Customers stay because the routine feels different",
-  description: "Measured improvements, fewer flare-ups, and a product people actually keep taking.",
+  title: "Customer Stories about GutGuard SynBIOTC+",
+  description: "gutguard synbiotic+ changes lives",
   items: [
     {
-      name: "Sarah Johnson",
-      role: "Product designer",
+      name: "Vida Balbin",
+      role: "Quezon, Bukidnon",
       quote:
-        "Within two weeks I had noticeably less bloating after dinner and stopped feeling wiped out every afternoon.",
+        "I had been suffering from a persistent cough for almost a year. No medicine seemed to work. But after I started taking SynBiotic+, my cough finally disappeared it really works!",
       rating: 5,
       avatar: "/images/logo.png",
     },
     {
-      name: "Dr. Michael Chen",
-      role: "Integrative practitioner",
+      name: "Dr. Jocelyn Aca",
+      role: "Davao City",
       quote:
-        "I recommend it to clients who need something credible and simple. The formula reads clean and the response has been strong.",
+        "Goodbye Morphine, Hello Movement! I had severe back pain and relied on morphine daily. After starting GutGuard, the pain eased significantly and I started moving without my back brace!",
       rating: 5,
       avatar: "/images/logo.png",
     },
     {
-      name: "Alex Rodriguez",
-      role: "Performance coach",
+      name: "Revelynda Ensoy",
+      role: "Davao City",
       quote:
-        "Travel usually wrecks my digestion. GutGuard made that a lot more manageable without adding another complicated routine.",
-      rating: 4,
+        "Menstruation After 5 Months. I hadn't had my period in 5 months due to hormonal imbalance. I started taking GutGuard, and my cycle returned naturally. It balanced me from the inside.",
+      rating: 5,
       avatar: "/images/logo.png",
+    },
+    {
+      name: "Elena Marquez",
+      role: "Cagayan de Oro",
+      quote:
+        "I wanted a wellness routine that felt simple enough to keep up every day. After adding SynBiotic+ to my mornings, it became one of the easiest habits to stay consistent with.",
+      rating: 5,
+      avatar: "/images/logo.png",
+    },
+    {
+      name: "Marites Delgado",
+      role: "Cebu City",
+      quote:
+        "For years I dealt with bloating after almost every meal. Two weeks into GutGuard SynBIOTC+, my stomach felt lighter and I stopped planning my whole day around discomfort.",
+      rating: 5,
+      avatar: "/images/logo.png",
+    },
+    {
+      name: "Anthony Perez",
+      role: "Makati City",
+      quote:
+        "I wanted something that supported digestion without giving me another complicated routine. GutGuard became the one supplement I actually stayed consistent with because I could feel the difference.",
+      avatar: "/images/logo.png",
+      rating: 5,
     },
   ],
 };

@@ -20,11 +20,11 @@ export const landingData = {
   infoCards: infoCardsData,
   productHighlight: productHighlightData,
   discountBanner: {
-    title: "Save 20% on your first GutGuard order.",
+    title: "Want a Discount?",
     description:
-      "Start with a lower-friction first month while you test the routine and see how it fits.",
+      "Get your bottle for only P3,500 when you join our community\nChoose your membership package:",
     cta: {
-      label: "Claim offer",
+      label: "Become a Member",
       href: "#footer-cta",
     },
   },

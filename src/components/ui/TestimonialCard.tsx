@@ -8,6 +8,7 @@ interface TestimonialCardProps {
   role?: string;
   avatar?: string;
   rating?: number;
+  className?: string;
 }
 
 export default function TestimonialCard({
@@ -16,11 +17,17 @@ export default function TestimonialCard({
   role,
   avatar,
   rating = 5,
+  className,
 }: TestimonialCardProps) {
   return (
-    <article className="h-full rounded-[30px] border border-white/60 bg-white/78 p-7 shadow-[0_20px_60px_rgba(7,27,84,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(7,27,84,0.1)]">
+    <article
+      className={[
+        "h-full rounded-[30px] border border-white/60 bg-white/78 p-7 shadow-[0_20px_60px_rgba(7,27,84,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(7,27,84,0.1)]",
+        className ?? "",
+      ].join(" ")}
+    >
       <RatingStars rating={rating} />
-      <blockquote className="mt-5 min-h-[168px] text-lg leading-8 tracking-[-0.01em] text-slate-700">
+      <blockquote className="mt-5 flex-1 text-lg leading-8 tracking-[-0.01em] text-slate-700">
         &ldquo;{quote}&rdquo;
       </blockquote>
       <div className="mt-7 flex items-center">

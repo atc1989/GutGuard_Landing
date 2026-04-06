@@ -8,39 +8,51 @@ export const footerCtaData = {
   },
 };
 
+export const footerPrimaryLinks = [
+  { label: "Home", href: "#top" },
+  { label: "Shop", href: "#footer-cta" },
+  { label: "Science", href: "#research" },
+  { label: "Contact", href: "#footer" },
+];
+
+export const footerProductLinks = [
+  { label: "GutGuard SynBiotic+", href: "#product" },
+  { label: "Blister Pack", href: "#footer-cta" },
+  { label: "Member Packages", href: "#footer-cta" },
+];
+
 export const footerLinks = [
   {
+    title: "Links",
+    links: footerPrimaryLinks,
+  },
+  {
     title: "Product",
-    links: [
-      { label: "Formula", href: "#product" },
-      { label: "Research", href: "#research" },
-      { label: "Benefits", href: "#benefits" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "FAQs", href: "#faq" },
-      { label: "Shipping", href: "#footer" },
-      { label: "Contact", href: "#footer" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "Partners", href: "#partners" },
-      { label: "Testimonials", href: "#testimonials" },
-      { label: "Privacy", href: "#footer" },
-    ],
+    links: footerProductLinks,
   },
 ];
 
 export const footerBrand = {
-  name: "GutGuard",
+  name: "GutGuard - Your Gut, Your Life",
   description:
-    "Digestive support products shaped for modern routines, clinical credibility, and repeatable results.",
+    "GutGuard is the first Triple-Action Gut health Formula (Pre-Pro-Post Biotics) in the Philippines backed by doctors & 15 years of scientific research. Trusted for gut health, immunity, and anti-aging.",
+  socialLinks: [
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/GutGuardOfficial",
+    },
+  ],
+  contact: {
+    title: "Contact",
+    email: "gutguardhq@gutguard.ph",
+    locationLabel: "Davao City -",
+    address: "Room 13, Villa Abrille St., JP Laurel Ave., Bajada, Davao City",
+  },
 };
 
 export const footerLegal = {
-  copyright: "2026 GutGuard. All rights reserved.",
+  copyright: "\u00a9 2026. All Rights Reserved.",
+  creditLabel: "Site by",
+  creditName: "Asiapac Technology Corp",
+  creditHref: "#footer",
 };

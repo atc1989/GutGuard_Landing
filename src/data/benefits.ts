@@ -1,15 +1,19 @@
 export const benefitsData = {
-  title: "What GutGuard is designed to improve",
+  eyebrow: "The only Triple-Biotics formula",
+  title: "The only Pre, Pro, and Post-biotic Formula in the Market",
   description:
-    "A tighter daily routine for people dealing with irregular digestion, bloating, and post-meal fatigue.",
+    "This is not just another supplement—it’s a scientific breakthrough designed to RESET your Health: The only Triple-Biotics formula for better gut health, stronger immunity, and a longer, healthier life.",
   benefitBulletItems: [
-    "Supports a more predictable routine with less heaviness and day-to-day discomfort.",
-    "Combines probiotics with complementary nutrients for a more resilient gut environment.",
-    "Helps reduce the energy drag that often follows poor digestion.",
-    "Makes digestive habits easier to maintain through travel, stress, and routine changes.",
+    "Contains Urolithin-A & L-Tryptophan for Anti-aging",
+    "Provides Gut-Brain Axis Support",
+    "Backed by 15 years of scientific and medical research",
+    "Developed with 7 leading organizations",
+    "Produced in a P1 Billions ISO-certified facility",
   ],
+  ctaLabel: "Try SynBIOTIC+ Now",
+  ctaHref: "#product",
   productImage: {
-    src: "/images/bottle.png",
-    alt: "GutGuard product bottle",
+    src: "/images/synbiotic-1.png",
+    alt: "GutGuard SynBIOTIC+ bottle in hand",
   },
 };

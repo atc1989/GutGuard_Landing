@@ -11,11 +11,9 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#071B54_0%,#0A2163_46%,#16358C_100%)] py-14 text-white sm:py-[4.25rem] lg:py-20"
+      className="relative overflow-hidden bg-transparent py-14 text-white sm:py-[4.25rem] lg:py-20"
       id="top"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(255,255,255,0.14),transparent_26%),radial-gradient(circle_at_50%_100%,rgba(79,99,255,0.26),transparent_36%),radial-gradient(circle_at_15%_25%,rgba(255,255,255,0.08),transparent_24%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(7,27,84,0)_0%,rgba(4,14,42,0.22)_100%)]" />
       <Container className="relative" size="xl">
         <div className="relative mx-auto flex min-h-[640px] max-w-[1200px] flex-col items-center text-center sm:min-h-[700px] lg:min-h-[780px]">
           <div className="relative z-20 flex w-full max-w-[960px] flex-col items-center pt-3 sm:pt-5 lg:pt-8">
@@ -26,7 +24,7 @@ export default function HeroSection() {
               </h1>
             </Reveal>
             <Reveal className="mt-2" delay={150} variant="up">
-              <p className={`${epilogue.className} max-w-[42rem] text-center text-[16px] font-normal leading-6 text-white`}>
+              <p className={`${epilogue.className} max-w-[42rem] text-center text-[16px] font-normal leading-6 !text-white`}>
                 Behind every capsule of GutGuard <strong className="font-bold">SynBIOTIC+</strong> is science you can trust
               </p>
             </Reveal>

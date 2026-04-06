@@ -1,21 +1,18 @@
 export const infoCardsData = {
-  title: "Why the formula is easy to stick with",
-  description: "A practical product system, not an overwhelming supplement stack.",
   cards: [
     {
-      title: "Simple once-daily use",
-      body: "No mixing, no refrigeration, and no complicated timing rules for most routines.",
-      icon: "01",
+      title: "80 Billion Multi-Strain Bacteria",
+      body: "Restoring your gut balance and rebuilding your defense",
     },
     {
-      title: "Focused ingredient stack",
-      body: "The formula stays tight around gut health goals instead of trying to solve every wellness problem at once.",
-      icon: "02",
+      quote:
+        "SynBiotic+ fits naturally into a daily routine and adds a simple layer of support for people who want a more balanced approach to gut wellness.",
+      author: "Marcus Villanueva",
+      role: "Wellness Consultant",
     },
     {
-      title: "Clean manufacturing standards",
-      body: "Produced with quality controls designed for consistency, shelf stability, and easier partner confidence.",
-      icon: "03",
+      title: "Triple Action Gut Health Formula",
+      body: "Backed by doctors & 15 years of scientific research. Trusted for gut health, immunity, and anti-aging.",
     },
   ],
-};
+} as const;

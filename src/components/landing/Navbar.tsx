@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Container from "@/components/ui/Container";
 import IconButton from "@/components/ui/IconButton";
 import { landingData } from "@/data/landing";
@@ -34,7 +36,10 @@ const navIcons = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/60 bg-[color:rgba(245,247,251,0.82)] backdrop-blur-xl">
-      <Container className="grid min-h-[82px] grid-cols-[1fr_auto] items-center gap-6 md:grid-cols-[1fr_auto_1fr]" size="xl">
+      <Container
+        className="grid min-h-[82px] max-w-[1600px] grid-cols-[1fr_auto] items-center gap-6 md:grid-cols-[1fr_auto_1fr]"
+        size="xl"
+      >
         <nav className="hidden items-center justify-start gap-8 lg:flex">
           {landingData.navigation.map((item) => (
             <a
@@ -47,10 +52,17 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          className="justify-self-start font-serif text-[1.9rem] font-semibold tracking-[-0.04em] text-[var(--color-primary)] md:justify-self-center"
+          className="justify-self-start md:justify-self-center"
           href="#top"
         >
-          GutGuard
+          <Image
+            alt="GutGuard logo"
+            className="h-auto w-[148px] object-contain sm:w-[168px]"
+            height={56}
+            priority
+            src="/images/gutguard-logo.png"
+            width={168}
+          />
         </a>
         <div className="flex items-center justify-end gap-2">
           {navIcons.map((item) => (
