@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Container from "@/components/ui/Container";
 import IconButton from "@/components/ui/IconButton";
@@ -42,18 +43,18 @@ export default function Navbar() {
       >
         <nav className="hidden items-center justify-start gap-8 lg:flex">
           {landingData.navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
               className="text-sm font-medium tracking-[0.02em] text-slate-600 transition hover:text-[var(--color-primary)]"
               href={item.href}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <a
+        <Link
           className="justify-self-start md:justify-self-center"
-          href="#top"
+          href="/"
         >
           <Image
             alt="GutGuard logo"
@@ -63,7 +64,7 @@ export default function Navbar() {
             src="/images/gutguard-logo.png"
             width={168}
           />
-        </a>
+        </Link>
         <div className="flex items-center justify-end gap-2">
           {navIcons.map((item) => (
             <IconButton key={item.label} aria-label={item.label} className={item.label !== "Cart" ? "hidden sm:inline-flex" : ""} icon={item.icon} />
