@@ -2,17 +2,17 @@ export const faqItems = [
   {
     question: "What is GutGuard SynBiotic+?",
     answer:
-      "GutGuard SynBIOTIC+ is a triple-biotics formula with prebiotics, probiotics, and postbiotics designed to support gut health, immunity, and overall wellness.",
+      "GutGuard SynBIOTIC+ is an advanced gut health supplement formulated with prebiotics, probiotics, and postbiotics—including scientifically recognized ingredients like Urolithin-A and L-Tryptophan. It supports your immune system, digestion, energy, and overall vitality.",
   },
   {
     question: "Who can Take GutGuard SynBIOTIC+?",
     answer:
-      "Most adults looking to improve gut balance, digestion, and immune support can take it. If you are pregnant, nursing, or under medical care, it is best to check with your doctor first.",
+      "GutGuard is designed for adults of all ages, especially those who experience gut discomfort, stress, or fatigue, want to boost their immune system naturally, or are proactive about anti-aging and long-term health. Pregnant or nursing women and those with serious medical conditions should consult their doctor before use.",
   },
   {
     question: "How much is one bottle?",
     answer:
-      "The retail price is ₱3,800 per bottle (30-day supply). Members enjoy a discounted price of ₱3,500 and access to exclusive bonuses.",
+      "The retail price is ₱3,800 per bottle (30-day supply). Members enjoy a discounted price of ₱4,500 and access to exclusive bonuses.",
   },
   {
     question: "Is GutGuard Safe?",
@@ -22,32 +22,32 @@ export const faqItems = [
   {
     question: "How can I become a member?",
     answer:
-      "You can become a member by contacting the team through the membership or partner channel. Members unlock preferred pricing and additional support perks.",
+      "You can become a member by purchasing any of our Membership Packages: Silver – ₱4,500 (1 bottle + 1 blister), Gold – ₱13,500 (3 bottles + 3 blister with bigger bonuses), or Platinum – ₱45,000 (10 bottles + 10 blister with highest rewards + support).",
   },
   {
     question: "Can I resell GutGuard and become a partner?",
     answer:
-      "Yes. GutGuard offers partner opportunities for stockists, centers, and wellness collaborators who want to share the product and earn from referrals or community building.",
+      "Absolutely! You can join as a Stockist (buy in bulk and resell locally) or as a Center (build a team, expand your network, and lead your community). Get access to systems, support, and commissions through our Partner Program.",
   },
   {
     question: "What are the benefits of becoming a member?",
     answer:
-      "Members can access discounted pricing, community support, exclusive offers, and updates on new partner or referral opportunities.",
+      "Discounted bottle price (₱4,500), access to referral rewards, eligibility for partnership (Stockist / Center), priority support, and early product access.",
   },
   {
     question: "Where is GutGuard Made?",
     answer:
-      "GutGuard is produced in a certified facility that follows strict quality and safety standards for consistency and purity.",
+      "GutGuard is proudly formulated and distributed in the Philippines, in partnership with expert formulators and scientists.",
   },
   {
     question: "How do I take GutGuard?",
     answer:
-      "Take the recommended serving daily, ideally as part of a consistent routine. Follow the label directions or your healthcare provider's advice.",
+      "Take 1 capsule per day, preferably with meals or as recommended by your healthcare provider.",
   },
   {
     question: "Where can I buy GutGuard?",
     answer:
-      "You can buy GutGuard directly through the official offer and membership channels on the site.",
+      "You can buy directly from this website, through our official representatives, or by becoming a member to enjoy discounts and benefits.",
   },
 ];
 

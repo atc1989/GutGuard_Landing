@@ -8,7 +8,7 @@ export const testimonialsData = {
       quote:
         "I had been suffering from a persistent cough for almost a year. No medicine seemed to work. But after I started taking SynBiotic+, my cough finally disappeared it really works!",
       rating: 5,
-      avatar: "/images/logo.png",
+      avatar: "/images/testimonials/testi-vida-150x150.jpg",
     },
     {
       name: "Dr. Jocelyn Aca",
@@ -16,7 +16,7 @@ export const testimonialsData = {
       quote:
         "Goodbye Morphine, Hello Movement! I had severe back pain and relied on morphine daily. After starting GutGuard, the pain eased significantly and I started moving without my back brace!",
       rating: 5,
-      avatar: "/images/logo.png",
+      avatar: "/images/testimonials/testi-aca-150x150.png",
     },
     {
       name: "Revelynda Ensoy",
@@ -24,30 +24,14 @@ export const testimonialsData = {
       quote:
         "Menstruation After 5 Months. I hadn't had my period in 5 months due to hormonal imbalance. I started taking GutGuard, and my cycle returned naturally. It balanced me from the inside.",
       rating: 5,
-      avatar: "/images/logo.png",
+      avatar: "/images/testimonials/testi-ensoy-150x150.jpg",
     },
     {
-      name: "Elena Marquez",
-      role: "Cagayan de Oro",
+      name: "Kyle Salonga",
+      role: "Surigao del Sur",
       quote:
-        "I wanted a wellness routine that felt simple enough to keep up every day. After adding SynBiotic+ to my mornings, it became one of the easiest habits to stay consistent with.",
-      rating: 5,
-      avatar: "/images/logo.png",
-    },
-    {
-      name: "Marites Delgado",
-      role: "Cebu City",
-      quote:
-        "For years I dealt with bloating after almost every meal. Two weeks into GutGuard SynBIOTC+, my stomach felt lighter and I stopped planning my whole day around discomfort.",
-      rating: 5,
-      avatar: "/images/logo.png",
-    },
-    {
-      name: "Anthony Perez",
-      role: "Makati City",
-      quote:
-        "I wanted something that supported digestion without giving me another complicated routine. GutGuard became the one supplement I actually stayed consistent with because I could feel the difference.",
-      avatar: "/images/logo.png",
+        "I have always been sick every busy days. Lately, work has been very hectic and I'm always easily get fever and flu. But after trying GutGuard SynBIOTIC+ It's been 2 months since I haven't gotten sick.",
+      avatar: "/images/testimonials/testi-kyle-150x150.png",
       rating: 5,
     },
   ],

@@ -35,7 +35,7 @@ export default function Home() {
               src="/images/pro-1-1.png"
               width={900}
             />
-          </div>
+          </div>  
           <TestimonialsSection />
           <InfoCardsSection />
         </div>

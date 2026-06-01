@@ -8,12 +8,14 @@ import { partnerWithUsData } from "./partner-with-us";
 import { partnersSectionData } from "./partners";
 import { productHighlightData } from "./product-highlight";
 import { researchData } from "./research";
+import { shopData } from "./shop";
 import { testimonialsData } from "./testimonials";
 
 export const landingData = {
   navigation: navItems,
   hero: heroData,
   research: researchData,
+  shop: shopData,
   partners: partnersSectionData,
   benefits: benefitsData,
   testimonials: testimonialsData,

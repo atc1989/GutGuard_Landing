@@ -57,7 +57,7 @@ export default function InfoCardsSection() {
                     alt={secondCard.author}
                     className="h-full w-full object-cover"
                     height={104}
-                    src="/images/logo.png"
+                    src="/images/testimonials/Ryan-150x150.png"
                     width={104}
                   />
                 </div>

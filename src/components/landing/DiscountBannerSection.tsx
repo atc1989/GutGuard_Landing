@@ -9,7 +9,7 @@ export default function DiscountBannerSection() {
 
   return (
     <section
-      className="overflow-hidden bg-[linear-gradient(180deg,#07145A_0%,#0A1458_100%)] pb-14 pt-6 sm:pb-20"
+      className="overflow-hidden bg-white pb-14 pt-6 sm:pb-20"
       id="discount-banner"
     >
       <Container size="xl">

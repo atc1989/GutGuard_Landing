@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
   defaultOpen?: boolean;
 }
 
@@ -43,7 +43,7 @@ export default function FAQItem({ question, answer, defaultOpen = false }: FAQIt
       >
         <div className="min-h-0">
           <div className={cn("pb-6", !isOpen && "invisible")}>
-            <p className="max-w-3xl text-[0.98rem] leading-8 text-[#7B869B]">{answer}</p>
+            <div className="max-w-3xl text-[0.98rem] leading-8 text-[#7B869B]">{answer}</div>
           </div>
         </div>
       </div>

@@ -6,9 +6,9 @@ export const infoCardsData = {
     },
     {
       quote:
-        "SynBiotic+ fits naturally into a daily routine and adds a simple layer of support for people who want a more balanced approach to gut wellness.",
-      author: "Marcus Villanueva",
-      role: "Wellness Consultant",
+        "GutGuard SynBIOTIC+ nourishes this inner ecosystem with 80 billion beneficial microbes a day, restoring balance where it all begins—your gut.",
+      author: "Ryan Boyd Origines",
+      role: "VP for Operation | Grinders Guild",
     },
     {
       title: "Triple Action Gut Health Formula",

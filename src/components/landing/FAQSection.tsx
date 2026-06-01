@@ -1,3 +1,5 @@
+'use client';
+
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import FAQItem from "@/components/ui/FAQItem";
@@ -34,10 +36,170 @@ function ShieldIcon() {
   );
 }
 
+const answerClass = "text-[0.98rem] leading-7 text-[#7B869B]";
+const listClass = `space-y-1.5 pl-1 ${answerClass}`;
+const linkClass = "font-medium text-[#0A1458] underline underline-offset-2";
+
+const richFaqItems = [
+  {
+    question: "What is GutGuard SynBiotic+?",
+    defaultOpen: false,
+    answer: (
+      <p className={answerClass}>
+        GutGuard SynBIOTIC+ is an advanced gut health supplement formulated with prebiotics,
+        probiotics, and postbiotics—including scientifically recognized ingredients like
+        Urolithin-A and L-Tryptophan. It supports your immune system, digestion, energy, and
+        overall vitality.
+      </p>
+    ),
+  },
+  {
+    question: "Who can Take GutGuard SynBIOTIC+?",
+    defaultOpen: false,
+    answer: (
+      <div className={`space-y-3 ${answerClass}`}>
+        <p>Recommended for adults who:</p>
+        <ul className={listClass}>
+          <li>• Experience gut discomfort, stress, or fatigue</li>
+          <li>• Want to boost immunity naturally</li>
+          <li>• Are proactive about anti-aging and long-term health</li>
+        </ul>
+        <p>
+          Pregnant or nursing women and those with serious medical conditions should consult a
+          doctor first.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "How much is one bottle?",
+    defaultOpen: true,
+    answer: (
+      <div className={`space-y-2 ${answerClass}`}>
+        <p>Retail price: ₱3,800 per bottle (30-day supply)</p>
+        <p>Members enjoy a discounted price of ₱4,500 and access to exclusive bonuses.</p>
+      </div>
+    ),
+  },
+  {
+    question: "Is GutGuard Safe?",
+    defaultOpen: false,
+    answer: (
+      <p className={answerClass}>
+        Yes. GutGuard is manufactured in a GMP-certified facility using clinically-supported
+        ingredients. It is non-GMO, allergen-free, and made with your safety in mind.
+      </p>
+    ),
+  },
+  {
+    question: "How can I become a member?",
+    defaultOpen: false,
+    answer: (
+      <div className={`space-y-3 ${answerClass}`}>
+        <p>Become a member by purchasing a package:</p>
+        <ul className={listClass}>
+          <li>• Silver – ₱4,500 (1 bottle + 1 blister)</li>
+          <li>• Gold – ₱13,500 (3 bottles + 3 blisters with bigger bonuses)</li>
+          <li>• Platinum – ₱45,000 (10 bottles + 10 blisters with highest rewards &amp; support)</li>
+        </ul>
+        <a className={linkClass} href="/packages">
+          Become a Member →
+        </a>
+      </div>
+    ),
+  },
+  {
+    question: "Can I resell GutGuard and become a partner?",
+    defaultOpen: false,
+    answer: (
+      <div className={`space-y-3 ${answerClass}`}>
+        <p>Join as:</p>
+        <ul className={listClass}>
+          <li>
+            • <span className="font-medium text-[#7B869B]">Stockist</span> – Buy in bulk and
+            resell locally
+          </li>
+          <li>
+            • <span className="font-medium text-[#7B869B]">Center</span> – Build a team and lead
+            a community
+          </li>
+        </ul>
+        <p>Get access to systems, support, and commissions through our Partner Program.</p>
+        <a className={linkClass} href="/contact">
+          Become a Partner →
+        </a>
+      </div>
+    ),
+  },
+  {
+    question: "What are the benefits of becoming a member?",
+    defaultOpen: false,
+    answer: (
+      <ul className={listClass}>
+        <li>• Discounted bottle price</li>
+        <li>• Access to referral rewards</li>
+        <li>• Eligibility for Stockist / Center partnership</li>
+        <li>• Priority support</li>
+        <li>• Early product access</li>
+      </ul>
+    ),
+  },
+  {
+    question: "Where is GutGuard Made?",
+    defaultOpen: false,
+    answer: (
+      <p className={answerClass}>
+        GutGuard is proudly formulated and distributed in the Philippines, in partnership with
+        expert formulators and scientists.
+      </p>
+    ),
+  },
+  {
+    question: "How do I take GutGuard?",
+    defaultOpen: false,
+    answer: (
+      <p className={answerClass}>
+        Take 1 capsule per day, preferably with meals or as recommended by your healthcare
+        provider.
+      </p>
+    ),
+  },
+  {
+    question: "Where can I buy GutGuard?",
+    defaultOpen: false,
+    answer: (
+      <div className={`space-y-3 ${answerClass}`}>
+        <ul className={listClass}>
+          <li>• Buy through the website</li>
+          <li>• Buy through official representatives</li>
+          <li>• Become a member for discounts and benefits</li>
+        </ul>
+        <div>
+          <a
+            className="inline-block rounded-full bg-[#F7C34A] px-5 py-2 text-[0.85rem] font-semibold text-black"
+            href="/shop"
+          >
+            Shop Now
+          </a>
+        </div>
+        <p>
+          <a className={linkClass} href="/contact">
+            Contact Us
+          </a>{" "}
+          or call our customer support hotline at{" "}
+          <a className={linkClass} href="tel:09260538831">
+            0926 053 8831
+          </a>
+        </p>
+      </div>
+    ),
+  },
+];
+
 export default function FAQSection() {
   const { faq, productHighlight } = landingData;
-  const leftColumn = faq.items.filter((_, index) => index % 2 === 0);
-  const rightColumn = faq.items.filter((_, index) => index % 2 === 1);
+  const leftColumn = richFaqItems.filter((_, index) => index % 2 === 0);
+  const rightColumn = richFaqItems.filter((_, index) => index % 2 === 1);
 
   return (
     <section className="section-space bg-white" id="faq">
@@ -59,14 +221,14 @@ export default function FAQSection() {
           <div className="space-y-3">
             {leftColumn.map((item, index) => (
               <Reveal key={item.question} delay={index * 70} variant="up">
-                <FAQItem {...item} defaultOpen={item.question === "How much is one bottle?"} />
+                <FAQItem answer={item.answer} defaultOpen={item.defaultOpen} question={item.question} />
               </Reveal>
             ))}
           </div>
           <div className="space-y-3">
             {rightColumn.map((item, index) => (
               <Reveal key={item.question} delay={index * 70} variant="up">
-                <FAQItem {...item} defaultOpen={item.question === "Is GutGuard Safe?"} />
+                <FAQItem answer={item.answer} defaultOpen={item.defaultOpen} question={item.question} />
               </Reveal>
             ))}
           </div>
