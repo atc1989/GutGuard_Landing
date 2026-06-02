@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/LegacyButton";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { landingData } from "@/data/landing";

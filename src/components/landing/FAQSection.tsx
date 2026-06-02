@@ -1,6 +1,6 @@
 'use client';
 
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/LegacyButton";
 import Container from "@/components/ui/Container";
 import FAQItem from "@/components/ui/FAQItem";
 import Reveal from "@/components/ui/Reveal";

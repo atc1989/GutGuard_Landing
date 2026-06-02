@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import CartSheet from "@/components/cart/CartSheet";
+import { useCart } from "@/components/cart/CartProvider";
 import Container from "@/components/ui/Container";
 import { landingData } from "@/data/landing";
 
@@ -45,6 +49,7 @@ const iconBtnClass = "flex h-9 w-9 items-center justify-center rounded-full text
 
 export default function Navbar() {
   const { navigation } = landingData;
+  const { cartCount, setCartOpen } = useCart();
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
@@ -111,15 +116,16 @@ export default function Navbar() {
             <SearchIcon />
           </button>
           <div className="relative">
-            <button aria-label="Cart" className={iconBtnClass} type="button">
+            <button aria-label="Cart" className={iconBtnClass} onClick={() => setCartOpen(true)} type="button">
               <CartIcon />
             </button>
             <span className="pointer-events-none absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#07145A] text-[0.55rem] font-bold leading-none text-white">
-              0
+              {cartCount}
             </span>
           </div>
         </div>
       </Container>
+      <CartSheet />
     </header>
   );
 }

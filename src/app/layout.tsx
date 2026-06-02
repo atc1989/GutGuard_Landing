@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import CartProvider from "@/components/cart/CartProvider";
 import { dmSans, epilogue, workSans } from "@/lib/fonts";
 
 import "./globals.css";
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${epilogue.variable} ${workSans.variable} bg-background text-foreground antialiased`}>
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

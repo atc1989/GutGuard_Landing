@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import MemberDashboard, { type MemberAddress, type MemberProfile } from "@/components/account/MemberDashboard";
+import type { MemberOrder } from "@/components/account/OrdersPanel";
 import AuthPage from "@/components/auth/AuthPage";
 import Navbar from "@/components/landing/Navbar";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 interface MyAccountPageProps {
-  searchParams: Promise<{ error?: string; recovery?: string }>;
+  searchParams: Promise<{ error?: string; recovery?: string; tab?: string }>;
 }
 
 export default async function MyAccountPage({ searchParams }: MyAccountPageProps) {
@@ -33,9 +34,10 @@ export default async function MyAccountPage({ searchParams }: MyAccountPageProps
     return <AuthPage initialError={params.error} mode="login" />;
   }
 
-  const [{ data: storedProfile }, { data: storedAddresses }] = await Promise.all([
+  const [{ data: storedProfile }, { data: storedAddresses }, { data: storedOrders }] = await Promise.all([
     supabase.from("profiles").select("id,email,first_name,last_name,full_name,phone").eq("id", user.id).maybeSingle(),
     supabase.from("addresses").select("id,user_id,address_type,recipient_name,phone,street,barangay,city,province,postal_code,country").eq("user_id", user.id),
+    supabase.from("orders").select("id,order_number,status,subtotal,shipping_fee,processing_fee,total,payment_method,shipping_address,billing_address,created_at,order_items(id,product_name,quantity,unit_price,line_total)").eq("user_id", user.id).order("created_at", { ascending: false }),
   ]);
 
   const metadata = user.user_metadata;
@@ -51,7 +53,12 @@ export default async function MyAccountPage({ searchParams }: MyAccountPageProps
   return (
     <>
       <Navbar />
-      <MemberDashboard initialAddresses={(storedAddresses ?? []) as MemberAddress[]} initialProfile={profile} />
+      <MemberDashboard
+        initialAddresses={(storedAddresses ?? []) as MemberAddress[]}
+        initialOrders={(storedOrders ?? []) as MemberOrder[]}
+        initialProfile={profile}
+        initialTab={params.tab === "orders" ? "orders" : "overview"}
+      />
     </>
   );
 }

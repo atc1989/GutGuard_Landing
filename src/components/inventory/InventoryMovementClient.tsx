@@ -4,7 +4,7 @@ import type { FormEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 
 import Navbar from "@/components/landing/Navbar";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/LegacyButton";
 import Container from "@/components/ui/Container";
 import Modal from "@/components/ui/Modal";
 

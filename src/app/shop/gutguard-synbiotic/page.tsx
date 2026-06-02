@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
+import BuyNowButton from "@/components/shop/BuyNowButton";
 
 const galleryImages = [
   {
@@ -151,12 +152,7 @@ export default function GutGuardSynbioticPage() {
                     +
                   </button>
                 </div>
-                <button
-                  className="inline-flex h-11 items-center justify-center rounded-lg bg-[#0305C6] px-8 text-[0.97rem] font-semibold !text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#0204A8] hover:shadow-[0_8px_24px_rgba(7,20,90,0.22)]"
-                  type="button"
-                >
-                  Buy now
-                </button>
+                <BuyNowButton productSlug="gutguard-synbiotic" quantity={quantity} />
               </div>
 
               {/* Meta */}
