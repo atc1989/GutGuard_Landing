@@ -8,10 +8,11 @@ import { cn } from "@/lib/cn";
 
 type SharedProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost" | "yellow" | "outline-light";
-  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary" | "ghost" | "yellow" | "outline-light" | "auth-primary" | "auth-outline" | "auth-text" | "unstyled";
+  size?: "sm" | "md" | "lg" | "none";
   className?: string;
   href?: string;
+  lift?: boolean;
 };
 
 type ButtonProps = SharedProps &
@@ -24,12 +25,17 @@ const variantClasses = {
   ghost: "bg-transparent text-slate-900 hover:bg-white/60",
   yellow: "bg-[var(--accent)] text-slate-950 hover:bg-amber-400 hover:shadow-[0_18px_40px_rgba(244,180,0,0.24)]",
   "outline-light": "border border-white/35 bg-transparent text-white hover:bg-white/10",
+  "auth-primary": "bg-[#1010C9] text-white shadow-sm hover:bg-[#0808A8]",
+  "auth-outline": "border border-[#1010C9] bg-transparent !text-[#1010C9] shadow-sm hover:bg-[#1010C9] hover:!text-white",
+  "auth-text": "bg-transparent !text-slate-500 shadow-none hover:!text-[#1010C9]",
+  unstyled: "",
 };
 
 const sizeClasses = {
   sm: "px-4 py-2.5 text-sm",
   md: "px-5 py-3 text-sm",
   lg: "px-6 py-3.5 text-[0.98rem]",
+  none: "",
 };
 
 export default function Button({
@@ -38,10 +44,12 @@ export default function Button({
   className,
   children,
   href,
+  lift = true,
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-lg font-medium tracking-[0.01em] shadow-sm transition duration-200 ease-[var(--ease-smooth)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 hover:-translate-y-0.5",
+    "inline-flex items-center justify-center rounded-lg font-medium tracking-[0.01em] transition duration-200 ease-[var(--ease-smooth)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2",
+    lift && "hover:-translate-y-0.5",
     variantClasses[variant],
     sizeClasses[size],
     className,

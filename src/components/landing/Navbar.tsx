@@ -50,7 +50,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <Container
         className="grid min-h-[72px] grid-cols-[1fr_auto_1fr] items-center gap-4"
-        size="xl"
+        size="wide"
       >
         {/* Left: Navigation */}
         <nav className="hidden items-center gap-6 lg:flex">

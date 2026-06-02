@@ -1,5 +1,32 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Supabase authentication
+
+1. In your Supabase dashboard, open **Project Settings > API**.
+2. Copy `.env.example` to `.env.local`.
+3. Set `NEXT_PUBLIC_SUPABASE_URL` to the project URL.
+4. Set `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` to the publishable key. For older Supabase projects, the legacy `anon` key also works here.
+5. In **Authentication > URL Configuration**, set the site URL to `http://localhost:3000` while developing and add `http://localhost:3000/auth/callback**` to the redirect URLs.
+6. Open **SQL Editor**, paste the contents of `supabase/setup.sql`, and run it once.
+7. Restart the development server after changing `.env.local`.
+
+The account icon opens `/my-account`. New users can register at `/sign-up`.
+
+### Password reset
+
+The **Lost your password?** action emails a Supabase recovery link. Add both the local callback URL and your deployed callback URL to **Authentication > URL Configuration > Redirect URLs**:
+
+```text
+http://localhost:3000/auth/callback**
+https://your-domain.com/auth/callback**
+```
+
+When a user opens the email link, the callback establishes the recovery session and `/my-account` switches to the new-password form.
+
+### Member dashboard
+
+After login, `/my-account` renders the member dashboard. Run `supabase/setup.sql` again after pulling dashboard changes so profiles support phone numbers and members can store shipping and billing addresses.
+
 ## Getting Started
 
 First, run the development server:
