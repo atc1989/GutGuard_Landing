@@ -301,7 +301,7 @@ begin
     raise exception 'You must be logged in to place an order.';
   end if;
 
-  if selected_payment_method <> 'cash_on_delivery' then
+  if coalesce(selected_payment_method, '') not in ('cash_on_delivery', 'security_bank') then
     raise exception 'This payment method is not available yet.';
   end if;
 

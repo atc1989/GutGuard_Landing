@@ -32,8 +32,10 @@ interface CheckoutAddress {
 
 const SHIPPING_FEE = 45.6;
 const PROCESSING_RATE = 0.07386;
+const SECURITY_BANK_PAYMENT_URL = "https://pay.securitybankcollect.com/cs_v5vyr7ebA0hTa3yq";
 const emptyAddress: CheckoutAddress = { first_name: "", last_name: "", phone: "", street: "", barangay: "", city: "", province: "", postal_code: "", country: "Philippines" };
 const inputClass = "mt-2 h-11 bg-white px-3 shadow-none";
+type PaymentMethod = "cash_on_delivery" | "security_bank";
 
 function AddressFields({ address, onChange }: { address: CheckoutAddress; onChange: (field: keyof CheckoutAddress, value: string) => void }) {
   return (
@@ -59,6 +61,7 @@ export default function CheckoutPage() {
   const [differentShipping, setDifferentShipping] = useState(false);
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("cash_on_delivery");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const processingFee = Math.round(subtotal * PROCESSING_RATE * 100) / 100;
@@ -106,11 +109,15 @@ export default function CheckoutPage() {
       billing_details: { ...billing, email },
       shipping_details: differentShipping ? shipping : { ...billing, email },
       order_notes: notes,
-      selected_payment_method: "cash_on_delivery",
+      selected_payment_method: paymentMethod,
     });
     setSubmitting(false);
     if (orderError) return setError(orderError.message);
     clearCart();
+    if (paymentMethod === "security_bank") {
+      window.location.assign(SECURITY_BANK_PAYMENT_URL);
+      return;
+    }
     router.push("/my-account?tab=orders");
   }
 
@@ -146,8 +153,8 @@ export default function CheckoutPage() {
               </CardContent></Card>
 
               <Card className="shadow-sm"><CardHeader><CardTitle>Payment method</CardTitle><CardDescription>Select how you would like to pay.</CardDescription></CardHeader><CardContent className="space-y-3">
-                <label className="flex cursor-not-allowed items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 opacity-60"><input disabled name="payment" type="radio" /><span><span className="flex items-center gap-2 text-sm font-medium text-slate-950"><CreditCard className="size-4" />Pay via Security Bank</span><span className="mt-1 block text-xs leading-5 text-slate-500">Coming soon. The API connection will be added when credentials are available.</span></span></label>
-                <label className="flex items-start gap-3 rounded-lg border border-[#4F63FF] bg-[#4F63FF]/5 p-4"><input defaultChecked name="payment" type="radio" value="cash_on_delivery" /><span><span className="text-sm font-medium text-slate-950">Cash on delivery</span><span className="mt-1 block text-xs leading-5 text-slate-500">Pay when your GutGuard order arrives.</span></span></label>
+                <label className={`flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition ${paymentMethod === "security_bank" ? "border-[#4F63FF] bg-[#4F63FF]/5" : "border-slate-200 bg-white hover:border-slate-300"}`}><input checked={paymentMethod === "security_bank"} name="payment" onChange={() => setPaymentMethod("security_bank")} type="radio" value="security_bank" /><span><span className="flex items-center gap-2 text-sm font-medium text-slate-950"><CreditCard className="size-4" />Pay via Security Bank</span><span className="mt-1 block text-xs leading-5 text-slate-500">After placing your order, you will be redirected to Security Bank Collect to complete payment.</span></span></label>
+                <label className={`flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition ${paymentMethod === "cash_on_delivery" ? "border-[#4F63FF] bg-[#4F63FF]/5" : "border-slate-200 bg-white hover:border-slate-300"}`}><input checked={paymentMethod === "cash_on_delivery"} name="payment" onChange={() => setPaymentMethod("cash_on_delivery")} type="radio" value="cash_on_delivery" /><span><span className="text-sm font-medium text-slate-950">Cash on delivery</span><span className="mt-1 block text-xs leading-5 text-slate-500">Pay when your GutGuard order arrives.</span></span></label>
                 <Button className="mt-2 h-11 w-full !text-white hover:!text-white" disabled={submitting} type="submit">{submitting ? "Placing order..." : "Place order"}</Button>
                 <p className="text-center text-xs leading-5 text-slate-500">Your order will be saved securely to your GutGuard account.</p>
               </CardContent></Card>
