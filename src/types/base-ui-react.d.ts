@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 declare module "@base-ui/react/avatar" {
   export const Avatar: any;
   export namespace Avatar {
