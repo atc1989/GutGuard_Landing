@@ -211,7 +211,7 @@ export default function MemberDashboard({ initialAddresses, initialOrders, initi
 
   return (
     <SidebarProvider className="min-h-[calc(100vh-72px)] bg-[#F7F9FC]">
-      <Tabs className="flex w-full flex-row gap-0" onValueChange={(value) => { resetFeedback(); setActiveTab(value as DashboardTab); }} value={activeTab}>
+      <Tabs className="flex w-full flex-row gap-0" onValueChange={(value: string) => { resetFeedback(); setActiveTab(value as DashboardTab); }} value={activeTab}>
         <Sidebar className="hidden border-r border-slate-200 bg-white lg:flex" collapsible="none">
           <SidebarHeader className="h-[76px] justify-center px-5 py-0">
             <div className="flex items-center gap-3">
@@ -284,7 +284,7 @@ export default function MemberDashboard({ initialAddresses, initialOrders, initi
               <SectionHeading eyebrow="Addresses" title="Shipping and billing" body="Save one shipping address and one billing address for your account." />
               <form className="mt-7 space-y-4" onSubmit={saveAddresses}>
                 <Card className="shadow-sm"><CardHeader><CardTitle>Shipping address</CardTitle><CardDescription>Where should your GutGuard orders be delivered?</CardDescription></CardHeader><CardContent><AddressFields address={shipping} onChange={(field, value) => changeAddress("shipping", field, value)} /></CardContent></Card>
-                <Card className="shadow-sm"><CardHeader><CardTitle>Billing address</CardTitle><CardDescription>Use your shipping address or enter billing details.</CardDescription><CardAction><Label className="flex items-center gap-2 text-xs text-slate-600"><Checkbox checked={sameAsShipping} onCheckedChange={(checked) => { const active = checked === true; setSameAsShipping(active); if (active) setBilling({ ...shipping, id: billing.id, address_type: "billing" }); }} />Same as shipping</Label></CardAction></CardHeader><CardContent><AddressFields address={billing} onChange={(field, value) => changeAddress("billing", field, value)} /></CardContent></Card>
+                <Card className="shadow-sm"><CardHeader><CardTitle>Billing address</CardTitle><CardDescription>Use your shipping address or enter billing details.</CardDescription><CardAction><Label className="flex items-center gap-2 text-xs text-slate-600"><Checkbox checked={sameAsShipping} onCheckedChange={(checked: boolean | "indeterminate") => { const active = checked === true; setSameAsShipping(active); if (active) setBilling({ ...shipping, id: billing.id, address_type: "billing" }); }} />Same as shipping</Label></CardAction></CardHeader><CardContent><AddressFields address={billing} onChange={(field, value) => changeAddress("billing", field, value)} /></CardContent></Card>
                 <Button disabled={saving} type="submit">{saving ? "Saving..." : "Save addresses"}</Button>
               </form>
             </TabsContent>

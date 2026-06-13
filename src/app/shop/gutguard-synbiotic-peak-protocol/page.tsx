@@ -10,51 +10,51 @@ import BuyNowButton from "@/components/shop/BuyNowButton";
 
 const galleryImages = [
   {
-    src: "/images/products/blister-pack-6.jpeg",
-    thumb: "/images/products/blister-pack-6.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic",
+    src: "/images/products/peak-protocol-1.jpeg",
+    thumb: "/images/products/peak-protocol-1.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-1.jpeg",
-    thumb: "/images/products/blister-pack-1.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 2",
+    src: "/images/products/peak-protocol-2.jpeg",
+    thumb: "/images/products/peak-protocol-2.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 2",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-2.jpeg",
-    thumb: "/images/products/blister-pack-2.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 3",
+    src: "/images/products/peak-protocol-3.jpeg",
+    thumb: "/images/products/peak-protocol-3.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 3",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-3.jpeg",
-    thumb: "/images/products/blister-pack-3.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 4",
+    src: "/images/products/peak-protocol-4.jpeg",
+    thumb: "/images/products/peak-protocol-4.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 4",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-4.jpeg",
-    thumb: "/images/products/blister-pack-4.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 5",
+    src: "/images/products/peak-protocol-5.jpeg",
+    thumb: "/images/products/peak-protocol-5.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 5",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-5.jpeg",
-    thumb: "/images/products/blister-pack-5.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 6",
+    src: "/images/products/peak-protocol-6.jpeg",
+    thumb: "/images/products/peak-protocol-6.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 6",
     width: 1200,
     height: 1200,
   },
   {
-    src: "/images/products/blister-pack-7.jpeg",
-    thumb: "/images/products/blister-pack-7.jpeg",
-    alt: "GutGuard SynBiotic+ Blister Pack Triple Biotic - Image 7",
+    src: "/images/products/peak-protocol-7.jpeg",
+    thumb: "/images/products/peak-protocol-7.jpeg",
+    alt: "GutGuard SynBiotic+ Peak Protocol Triple Biotic - Image 7",
     width: 1200,
     height: 1200,
   },
@@ -69,11 +69,11 @@ const tabs: { id: TabId; label: string }[] = [
 ];
 
 const productTitle =
-  "GutGuard SynBiotic+ Blister Pack Triple Biotic (Pre + Pro + Post) 80 Billion CFU Probiotics for Women & Men | Supplement for Digestion, Energy, Cellular Support, Gut Health for Bloating Relief, Detox & Immunity";
+  "GutGuard SynBiotic+ Peak Protocol Triple Biotic (Pre + Pro + Post) 80 Billion CFU Probiotics for Women & Men | Supplement for Digestion, Energy, Cellular Support, Gut Health for Bloating Relief, Detox & Immunity";
 
 const descriptionPoints = [
   "GutGuard SynBiotic+ Blister Pack",
-  "Triple-Action Gut Health Formula 🌟",
+  "Triple-Action Gut Health Formula",
   "Pre-Pro-Post Biotics: GutGuard is the first formula in the Philippines backed by doctors and 15 years of scientific research.",
   "Nourishes Inner Ecosystem: Contains 80 billion beneficial microbes daily, restoring balance in your gut.",
   "Trusted for Gut Health, Immunity, and Anti-Aging: A cutting-edge triple-biotic formula combining prebiotics, probiotics, and postbiotics.",
@@ -84,14 +84,14 @@ const descriptionPoints = [
   "Scientific and Medical Research: Backed by 15 years of scientific and medical research.",
   "Developed with Leading Organizations: Developed with 7 leading organizations.",
   "ISO-Certified Facility: Produced in a P1 Billion ISO-certified facility.",
-  "Experience Better Gut Health, Stronger Immunity, and a Longer, Healthier Life 🌟",
-  "GutGuard SynBiotic+ Blister Pack is your trusted solution for gut health, immunity, and anti-aging. 🌟",
+  "Experience Better Gut Health, Stronger Immunity, and a Longer, Healthier Life",
+  "GutGuard SynBiotic+ Blister Pack is your trusted solution for gut health, immunity, and anti-aging.",
 ];
 
-export default function GutGuardBlisterPackPage() {
+export default function GutGuardPeakProtocolPage() {
+  const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<TabId>("description");
-  const [activeImage, setActiveImage] = useState(0);
 
   return (
     <>
@@ -143,7 +143,7 @@ export default function GutGuardBlisterPackPage() {
                 {productTitle}
               </h1>
               <p className="mt-3 text-[1.7rem] font-bold tracking-[-0.02em] text-[#07145A]">
-                P1,299.00
+                P39,999.00
               </p>
 
               <div className="mt-5 space-y-4 text-[0.97rem] leading-8 text-slate-600">
@@ -156,17 +156,31 @@ export default function GutGuardBlisterPackPage() {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <div className="flex items-center overflow-hidden rounded-lg border border-slate-300">
-                  <button className="flex h-11 w-10 items-center justify-center text-xl text-slate-600 hover:bg-slate-50" onClick={() => setQuantity(Math.max(1, quantity - 1))} type="button">-</button>
-                  <span className="flex h-11 w-12 items-center justify-center border-x border-slate-300 text-[0.97rem] font-medium text-slate-900">{quantity}</span>
-                  <button className="flex h-11 w-10 items-center justify-center text-xl text-slate-600 hover:bg-slate-50" onClick={() => setQuantity(quantity + 1)} type="button">+</button>
+                  <button
+                    className="flex h-11 w-10 items-center justify-center text-xl text-slate-600 hover:bg-slate-50"
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    type="button"
+                  >
+                    -
+                  </button>
+                  <span className="flex h-11 w-12 items-center justify-center border-x border-slate-300 text-[0.97rem] font-medium text-slate-900">
+                    {quantity}
+                  </span>
+                  <button
+                    className="flex h-11 w-10 items-center justify-center text-xl text-slate-600 hover:bg-slate-50"
+                    onClick={() => setQuantity(quantity + 1)}
+                    type="button"
+                  >
+                    +
+                  </button>
                 </div>
-                <BuyNowButton productSlug="gutguard-synbiotic-blister-pack" quantity={quantity} />
+                <BuyNowButton productSlug="gutguard-synbiotic-peak-protocol" quantity={quantity} />
               </div>
 
               <div className="mt-8 space-y-2 border-t border-slate-100 pt-6 text-[0.88rem]">
-                <p className="text-slate-500"><span className="font-medium text-slate-700">SKU: </span>1-1</p>
+                <p className="text-slate-500"><span className="font-medium text-slate-700">SKU: </span>1-4</p>
                 <p className="text-slate-500"><span className="font-medium text-slate-700">Categories: </span><span className="text-[#1A26C8]">Retail</span>, <span className="text-[#1A26C8]">SynBIOTIC+</span></p>
-                <p className="text-slate-500"><span className="font-medium text-slate-700">Product ID: </span>1737328486628607712</p>
+                <p className="text-slate-500"><span className="font-medium text-slate-700">Product ID: </span>1735691058658576096</p>
               </div>
             </div>
           </div>
