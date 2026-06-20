@@ -11,18 +11,18 @@ export default function BenefitsSection() {
   return (
     <section className="section-space bg-white" id="benefits">
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-18" size="xl">
-        <Reveal className="max-w-[48rem]" variant="left">
+        <Reveal className="w-full" variant="left">
           <div>
             <p className="text-[0.9rem] font-medium uppercase tracking-[0.18em]" style={{ color: "#020617" }}>
               {benefits.eyebrow}
             </p>
-            <h2 className="mt-6 text-[2rem] font-normal leading-[1.1] tracking-[-0.04em] text-slate-950 sm:text-[2.45rem] lg:text-[3.2rem]">
-              <span className="block whitespace-nowrap">
+            <h2 className="mt-6 text-[1.75rem] font-normal leading-[1.1] tracking-[-0.04em] text-slate-950 sm:text-[2.45rem] lg:text-[3.2rem]">
+              <span className="block">
                 The only <span className="text-[#1A26C8]">Pre, Pro, and Post-biotic</span>
               </span>
               <span className="block"><span className="text-[#1A26C8]">Formula</span> in the Market</span>
             </h2>
-            <p className="mt-8 max-w-[44rem] text-[1.08rem] leading-[1.75]" style={{ color: "#020617" }}>
+            <p className="mt-8 text-[1.08rem] leading-[1.75]" style={{ color: "#020617" }}>
               This is not just another supplement, it&apos;s a scientific breakthrough <strong>designed to RESET your Health:</strong>{" "}
               The only Triple-Biotics formula for better gut health, stronger immunity, and a longer, healthier life.
             </p>
