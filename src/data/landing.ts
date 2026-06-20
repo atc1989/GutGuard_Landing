@@ -24,10 +24,10 @@ export const landingData = {
   discountBanner: {
     title: "Want a Discount?",
     description:
-      "Get your bottle for only P3,500 when you join our community\nChoose your membership package:",
+      "Get your bottle for only P4,500 when you join our community\nChoose your membership package:",
     cta: {
       label: "Become a Member",
-      href: "#footer-cta",
+      href: "/shop",
     },
   },
   partnerWithUs: partnerWithUsData,

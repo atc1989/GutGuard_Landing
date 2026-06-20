@@ -17,6 +17,6 @@ export const productHighlightData = {
   },
   cta: {
     text: "Buy SynBIOTIC+",
-    href: "#footer-cta",
+    href: "/shop/gutguard-synbiotic",
   },
 };

@@ -11,7 +11,7 @@ export const benefitsData = {
     "Produced in a P1 Billions ISO-certified facility",
   ],
   ctaLabel: "Try SynBIOTIC+ Now",
-  ctaHref: "#product",
+  ctaHref: "/shop",
   productImage: {
     src: "/images/synbiotic-1.png",
     alt: "GutGuard SynBIOTIC+ bottle in hand",

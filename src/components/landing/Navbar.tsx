@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import CartSheet from "@/components/cart/CartSheet";
 import { useCart } from "@/components/cart/CartProvider";
@@ -45,11 +46,27 @@ function CartIcon() {
   );
 }
 
+function HamburgerIcon({ open }: { open: boolean }) {
+  return (
+    <svg fill="none" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+      {open ? (
+        <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+      ) : (
+        <>
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+        </>
+      )}
+    </svg>
+  );
+}
+
 const iconBtnClass = "flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-slate-900";
 
 export default function Navbar() {
   const { navigation } = landingData;
   const { cartCount, setCartOpen } = useCart();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
@@ -57,43 +74,56 @@ export default function Navbar() {
         className="grid min-h-[72px] grid-cols-[1fr_auto_1fr] items-center gap-4"
         size="wide"
       >
-        {/* Left: Navigation */}
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navigation.map((item) =>
-            item.children ? (
-              <div key={item.label} className="group relative">
-                <button
-                  className="flex items-center gap-1.5 text-[0.88rem] font-medium text-slate-700 transition hover:text-slate-950"
-                  type="button"
+        {/* Left: Desktop Navigation / Mobile Hamburger */}
+        <div className="flex items-center">
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-6 lg:flex">
+            {navigation.map((item) =>
+              item.children ? (
+                <div key={item.label} className="group relative">
+                  <button
+                    className="flex items-center gap-1.5 text-[0.88rem] font-medium text-slate-700 transition hover:text-slate-950"
+                    type="button"
+                  >
+                    {item.label}
+                    <span className="mt-0.5 transition-transform duration-200 group-hover:rotate-180">
+                      <ChevronDownIcon />
+                    </span>
+                  </button>
+                  <div className="invisible absolute left-0 top-full z-50 mt-2 min-w-[160px] rounded-xl border border-slate-100 bg-white py-1.5 opacity-0 shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        className="block px-4 py-2 text-[0.85rem] text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                        href={child.href}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  className="text-[0.88rem] font-medium text-slate-700 transition hover:text-slate-950"
+                  href={item.href}
                 >
                   {item.label}
-                  <span className="mt-0.5 transition-transform duration-200 group-hover:rotate-180">
-                    <ChevronDownIcon />
-                  </span>
-                </button>
-                <div className="invisible absolute left-0 top-full z-50 mt-2 min-w-[160px] rounded-xl border border-slate-100 bg-white py-1.5 opacity-0 shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      className="block px-4 py-2 text-[0.85rem] text-slate-600 hover:bg-slate-50 hover:text-slate-900"
-                      href={child.href}
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={item.href}
-                className="text-[0.88rem] font-medium text-slate-700 transition hover:text-slate-950"
-                href={item.href}
-              >
-                {item.label}
-              </Link>
-            )
-          )}
-        </nav>
+                </Link>
+              )
+            )}
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className={`${iconBtnClass} lg:hidden`}
+            onClick={() => setMobileOpen((v) => !v)}
+            type="button"
+          >
+            <HamburgerIcon open={mobileOpen} />
+          </button>
+        </div>
 
         {/* Center: Logo */}
         <Link className="justify-self-center" href="/">
@@ -125,6 +155,54 @@ export default function Navbar() {
           </div>
         </div>
       </Container>
+
+      {/* Mobile menu drawer */}
+      {mobileOpen && (
+        <div className="border-t border-slate-100 bg-white lg:hidden">
+          <nav className="flex flex-col px-4 py-3">
+            {navigation.map((item) =>
+              item.children ? (
+                <div key={item.label}>
+                  <button
+                    className="flex w-full items-center justify-between py-3 text-[0.95rem] font-medium text-slate-700"
+                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                    type="button"
+                  >
+                    {item.label}
+                    <span className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`}>
+                      <ChevronDownIcon />
+                    </span>
+                  </button>
+                  {openDropdown === item.label && (
+                    <div className="mb-1 ml-3 flex flex-col border-l border-slate-100 pl-3">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          className="py-2.5 text-[0.88rem] text-slate-600 hover:text-slate-900"
+                          href={child.href}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  className="border-b border-slate-50 py-3 text-[0.95rem] font-medium text-slate-700 last:border-0 hover:text-slate-950"
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+          </nav>
+        </div>
+      )}
+
       <CartSheet />
     </header>
   );

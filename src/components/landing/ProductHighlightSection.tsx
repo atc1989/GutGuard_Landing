@@ -63,7 +63,7 @@ export default function ProductHighlightSection() {
           </div>
         </Reveal>
 
-        <div className="relative mt-8 grid items-center gap-10 lg:grid-cols-[1fr_0.9fr_1fr] lg:gap-12">
+        <div className="relative mt-8 grid items-center gap-10 lg:grid-cols-[1fr_0.9fr_1fr] lg:gap-12 [&>*]:w-full">
           <Reveal variant="left">
             <div className="space-y-7 lg:pr-4">
               {productHighlight.leftBenefits.map((feature) => (

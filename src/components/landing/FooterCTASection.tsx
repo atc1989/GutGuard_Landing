@@ -28,7 +28,7 @@ export default function FooterCTASection() {
           <div className="relative overflow-hidden rounded-[38px] border border-white/70 bg-[linear-gradient(135deg,#071B54_0%,#182C7D_58%,#4F63FF_130%)] px-8 py-10 text-white shadow-[0_30px_90px_rgba(7,27,84,0.16)] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_24%),radial-gradient(circle_at_72%_54%,rgba(255,255,255,0.1),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(244,180,0,0.16),transparent_26%)]" />
             <div className="pointer-events-none absolute inset-y-0 right-[18%] w-[18rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))] blur-2xl" />
-            <div className="relative grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14">
+            <div className="relative grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14 [&>*]:w-full">
               <div className="flex max-w-[35rem] flex-col gap-12 pt-4 [&_p]:text-white [&_span]:text-white">
                 <div className="space-y-10">
                   <p className="text-xs font-semibold uppercase tracking-[0.26em] !text-white">

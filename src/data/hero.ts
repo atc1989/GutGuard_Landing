@@ -5,11 +5,11 @@ export const heroData = {
     "Behind every capsule of GutGuard SynBIOTIC+ is science you can trust",
   primaryCta: {
     label: "Start your Gut Health Journey",
-    href: "#product",
+    href: "/shop",
   },
   secondaryCta: {
     label: "Shop Now",
-    href: "#research",
+    href: "/shop",
   },
   decorativeText: "Probiotic & Prebiotic & Postbiotic",
   heroImages: {

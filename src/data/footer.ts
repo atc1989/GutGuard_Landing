@@ -4,7 +4,7 @@ export const footerCtaData = {
     "Start with one clean daily product and a formula built to earn repeat use.",
   cta: {
     label: "Get started",
-    href: "#product",
+    href: "/shop",
   },
 };
 
