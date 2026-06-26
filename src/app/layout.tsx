@@ -8,6 +8,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "GutGuard | Modern Gut Health Landing Page",
   description: "Science-led digestive wellness landing page for GutGuard.",
+  icons: {
+    icon: "/images/logo/favicon_logo.jpg",
+  },
 };
 
 export default function RootLayout({
