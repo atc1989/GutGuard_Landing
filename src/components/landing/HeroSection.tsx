@@ -59,7 +59,7 @@ export default function HeroSection() {
             <Reveal className="relative z-20 mt-5 sm:mt-7 lg:mt-8 lg:-translate-y-2" delay={300} variant="scale">
               <Image
                 alt={hero.heroImages.bottle.alt}
-                className="floating-bottle relative z-10 h-auto w-[216px] drop-shadow-[0_24px_42px_rgba(1,8,27,0.44)] sm:w-[248px] lg:w-[274px]"
+                className="floating-bottle relative z-10 h-auto w-[374px] drop-shadow-[0_24px_42px_rgba(1,8,27,0.44)] sm:w-[430px] lg:w-[475px]"
                 height={648}
                 priority
                 src={hero.heroImages.bottle.src}
